@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="fracciones.js"></script>
+    <title>Fracciones</title>
+</head>
+<body>
+    <br><br>
+    <h1>Operaciones de fracciones</h1>
+    <div id="content">
+        <nav id="content-body">
+            <section class="body-num">
+                <header class="numerador">
+                    <input type="number" class="nume-input" placeholder="Numerador" id="num1">
+                </header>
+                <footer class="denominador">
+                    <input type="number" class="nume-input" placeholder="Denominador" id="num2">
+                </footer>
+            </section>
+            <section class="operador">
+                <select id="operadores">
+                    <option value="">Operador</option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                     <option value="/">/</option>
+                </select>
+            </section>
+            <section class="body-num"> 
+                <header class="numerador">
+                     <input type="number" class="nume-input" placeholder="Numerador" id="num3">
+                </header>
+                <footer class="denominador">
+                    <input type="number" class="nume-input" placeholder="Denominador"id="num4">
+                </footer>
+            </section>
+            <section class="operador">
+                <h1>=</h1>
+            </section>
+            <section class="body-num">
+                <header class="numerador">
+                    <h1 id="res-Num"></h1>
+                </header>
+                <footer class="denominador">
+                     <h1 id="res-Deno"></h1>
+                </footer>
+            </section>
+        </nav>
+    </div>
+    <br>
+    <button onclick="Fraccion()" id="btn">Calcular</button>
+    
+</body>
+</html>
