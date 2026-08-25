@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="funcion.js" defer></script>
+    <title>Ecuaciones</title>
+</head>
+<body>
+    <div id="content">
+        <header id="head"></header>
+        <section id="body">
+            <nav id="ecuacion-Content">
+                <h1 id="ecuacion"></h1>
+            </nav>
+            <footer id="content-btn">
+                <nav class="opciones">
+                    <section onclick="Val_Respuesta(1)" class="btn">
+                        <h1>A</h1>
+                    </section>
+                    <footer class="number">
+                    <h1 id="option-1"></h1>
+                    </footer>
+                </nav>
+                <nav class="opciones">
+                    <section onclick="Val_Respuesta(2)" class="btn">
+                        <h1>B</h1>
+                    </section>
+                    <footer class="number">
+                    <h1 id="option-2"></h1>
+                    </footer>
+                </nav>
+                <nav class="opciones">
+                    <section onclick="Val_Respuesta(3)" class="btn">
+                        <h1>C</h1>
+                    </section>
+                    <footer class="number">
+                    <h1 id="option-3"></h1>
+                    </footer>
+                </nav>
+            </footer>
+        </section>
+        <footer id="time">
+            <h2 id="timer">Timer</h2>
+        </footer>
+
+
+    </div>
+    <button onclick="GenerarEcuation()" id="btn-generar">Generar</button>
+    
+</body>
+</html>
