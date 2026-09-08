@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="funciones.js" defer></script>
+    <title>Matemáticas</title>
+</head>
+<body>
+    <!--  ENCABEZADO  -->
+    <section id="inicioSeccion"></section>
+    <header id="head">
+        <div id="title-inicio">Matemáticas</div>
+
+        <nav class="secciones">
+
+            <a href="#inicioSeccion">Inicio</a>
+            <a href="#seccionUno">Ejercicio 1</a>
+            <a href="#seccionDos">Ejercicio 2</a>
+            <a href="#VideoSeccion">Video</a>
+            
+        </nav>
+
+    </header>
+
+    <!-- INICIO -->
+    <section id="inicio">
+        <div id="texto">
+
+            <h1>Proyecto final.</h1>
+            <p class="parrafo">Bienvenido. En esta página muestra ejercicio de la materia y la explicación de un estudio estadístico.</p>
+            <a class="boton" href="#seccionUno">Empezar</a>
+
+        </div>
+
+        <nav id="imagen">
+
+            <img id="img" src="img/logo.jpeg">
+
+        </nav>
+    
+    </section>
+    <section id="seccionUno"></section>
+    
+
+    <!-- EJERCICIO 1 -->
+     <br><br><br><br><br>
+
+     
+     <section id="EjercicioUno">
+
+        <h1 class="title-content">Fracciones</h1>
+
+        <nav class="content-ejer">
+
+            <h2 class="title-ejer">Ejercicio 1</h2>
+
+            <p class="parrafo">Ingresa los valores numéricos correspondientes en los campos de numerador y denominador de cada fracción, selecciona la operación matemática que deseas realizar en el menú desplegable y presiona el botón Calcular para obtener el resultado.</p>
+
+            <br><br>
+
+            <h1 class="title-content">Operaciones con fracciones</h1>
+
+            <div id="content-Uno">
+
+                <nav id="content-body">
+
+                    <section class="body-num">
+
+                        <header class="numerador">
+
+                            <input type="number" class="nume-input" placeholder="Numerador" id="num1">
+
+                        </header>
+
+                        <footer class="denominador">
+
+                            <input type="number" class="nume-input" placeholder="Denominador" id="num2">
+
+                        </footer>
+
+                    </section>
+
+                    <section class="operador">
+
+                        <select id="operadores">
+
+                            <option value="">Operador</option>
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">*</option>
+                            <option value="/">/</option>
+
+                        </select>
+
+                    </section>
+
+                    <section class="body-num"> 
+
+                        <header class="numerador">
+
+                            <input type="number" class="nume-input" placeholder="Numerador" id="num3">
+
+                        </header>
+                        <footer class="denominador">
+
+                            <input type="number" class="nume-input" placeholder="Denominador"id="num4">
+
+                        </footer>
+
+                    </section>
+
+                    <section class="operador">
+
+                        <h1 id="igual">=</h1>
+
+                    </section>
+                    <section class="body-num">
+
+                        <header class="numerador">
+
+                            <h1 id="res-Num"></h1>
+
+                        </header>
+
+                        <footer class="denominador">
+
+                            <h1 id="res-Deno"></h1>
+
+                        </footer>
+
+                    </section>
+
+                </nav>
+
+            </div>
+
+            <br>
+            <button onclick="Fraccion()" id="btn">Calcular</button>
+
+        </nav>
+
+     </section>
+     <section id="seccionDos"></section>
+
+     <!-- Ejercicio 2 -->
+      <br><br><br><br>
+
+      <section id="EjercicioDos">
+
+            <h1 class="title-content">Ecuaciones</h1>
+
+            <nav class="content-ejer">
+
+                <h2 class="title-ejer">Ejercicio 2</h2>
+
+                <p class="parrafo">A continuación, se te presenta una ecuación matemática. Lee con atención la expresión planteada, realiza los cálculos necesarios en tu libreta y selecciona la alternativa (A, B o C) que contenga la solución correcta.</p>
+
+                <br><br>
+
+                <div id="content">
+
+                    <section id="body-dos">
+
+                        <nav id="ecuacion-Content">
+
+                            <h1 id="ecuacion"></h1>
+
+                        </nav>
+
+                        <footer id="content-btn">
+
+                            <nav class="opciones">
+
+                                <section onclick="Val_Respuesta(1)" class="btn">
+
+                                    <h1>A</h1>
+
+                                </section>
+
+                                <footer class="number">
+
+                                <h1 id="option-1"></h1>
+
+                                </footer>
+
+                            </nav>
+
+                            <nav class="opciones">
+
+                                <section onclick="Val_Respuesta(2)" class="btn">
+
+                                    <h1>B</h1>
+
+                                </section>
+
+                                <footer class="number">
+
+                                <h1 id="option-2"></h1>
+
+                                </footer>
+
+                            </nav>
+
+                            <nav class="opciones">
+
+                                <section onclick="Val_Respuesta(3)" class="btn">
+
+                                    <h1>C</h1>
+
+                                </section>
+
+                                <footer class="number">
+
+                                <h1 id="option-3"></h1>
+
+                                </footer>
+
+                            </nav>
+
+                        </footer>
+
+                    </section>
+
+                    <footer id="time">
+
+                        <h2 id="timer">Timer</h2>
+
+                    </footer>
+
+                </div>
+
+                <button onclick="GenerarEcuation()" id="btn-generar">Generar</button>
+
+            </nav>
+
+      </section>
+      <section id="VideoSeccion"></section>
+
+      <!-- VIDEO -->
+       <br><br><br><br>
+
+       <section id="Video">
+
+        <h1 class="title-content">Video</h1>
+
+        <nav class="content-ejer">
+
+            <h2 class="title-ejer">Estudio estadisto</h2>
+
+            <p class="parrafo">Encuesta de Convivencia y Seguridad Ciudadana (ECSC) estudia la seguridad y convivencia de las personas, identificando delitos como hurtos, extorsiones e incidentes de seguridad digital, además de conocer la percepción de inseguridad de la población</p>
+
+            <br><br>
+
+            <aside id="content-video">
+                <iframe id="video" src="img/video.mp4"></iframe>
+            </aside>
+        </nav>
+
+       </section>
+    
+    <br><br><br><br>
+    <footer id="content-footer">
+     
+            <hp><strong>Programa:</strong>ADSO <br><strong>Ficha: </strong> 3378498 <br><strong>Año</strong> 2026</hp>
+         
+
+        
+    
+       
+    </footer>
+</body>
+</html>
