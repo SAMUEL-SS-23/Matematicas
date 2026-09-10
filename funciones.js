@@ -1,173 +1,240 @@
-
 //Ejercicio 1
 
 let resNumerador = "";
 let resDenominador = "";
 
-function Fraccion(){
+function Fraccion() {
+  let num1 = parseInt(document.getElementById("num1").value);
+  let num2 = parseInt(document.getElementById("num2").value);
+  let num3 = parseInt(document.getElementById("num3").value);
+  let num4 = parseInt(document.getElementById("num4").value);
 
-    let num1 = parseInt(document.getElementById("num1").value);
-    let num2 = parseInt(document.getElementById("num2").value);
-    let num3 = parseInt(document.getElementById("num3").value);
-    let num4 = parseInt(document.getElementById("num4").value);
+  let operador = document.getElementById("operadores").value;
 
-    let operador = document.getElementById("operadores"). value;
-
-switch (operador) {
-
+  switch (operador) {
     case "+":
-        if(num2 === num4){
-            resNumerador = num1 + num3;
-            resDenominador = num4;
-        }
-        else{
-            resNumerador = (num1 * num4) + (num2 * num3);
-            resDenominador = num2 * num4;
-        }
+      if (num2 === num4) {
+        resNumerador = num1 + num3;
+        resDenominador = num4;
+      } else {
+        resNumerador = num1 * num4 + num2 * num3;
+        resDenominador = num2 * num4;
+      }
 
-    break;
-        
+      break;
+
     case "-":
-        if(num2 === num4){
-            resNumerador = num1 - num3;
-            resDenominador = num4;
-        }
-        else{
-            resNumerador = (num1 * num4) - (num2 * num3);
-            resDenominador = num2 * num4;
-        }
+      if (num2 === num4) {
+        resNumerador = num1 - num3;
+        resDenominador = num4;
+      } else {
+        resNumerador = num1 * num4 - num2 * num3;
+        resDenominador = num2 * num4;
+      }
 
-    break;
+      break;
 
     case "*":
-        resNumerador = num1 * num3;
-        resDenominador = num2 * num4;
+      resNumerador = num1 * num3;
+      resDenominador = num2 * num4;
 
-    break;
+      break;
 
     case "/":
-        resNumerador = num1 * num4;
-        resDenominador = num2 * num3;
+      resNumerador = num1 * num4;
+      resDenominador = num2 * num3;
 
-    break;
-            
-    }
-    
-    document.getElementById("res-Num").innerHTML = resNumerador;
-    document.getElementById("res-Deno").innerHTML = resDenominador;
+      break;
+  }
+
+  document.getElementById("res-Num").innerHTML = resNumerador;
+  document.getElementById("res-Deno").innerHTML = resDenominador;
 }
-
 
 //Ejercicio 2
 
 let resultadoEcuation = 0;
 
-window.onload = () =>{
-    StarTime();
-}
+window.onload = () => {
+  StarTime();
+};
 
 const GenerarEcuation = () => {
+  let numberEcuation = Math.floor(Math.random() * 3);
+  let ecuation = "";
 
-    let numberEcuation = Math.floor(Math.random() * 3);
-    let ecuation = "";
-
-   
-    switch(numberEcuation){
-
-        case 0:{
-            let a = nR(), b = nR(), c = nR();
-            ecuation = `${a}X + ${b} = ${c}`;
-            resultadoEcuation = (c - b) / a;
-            document.getElementById("ecuacion").innerHTML = ecuation;
-            break;
-        }
-
-        case 1: {
-            let a = nR(), b = nR(), c = nR(), d = nR();
-            if(b === d) b++;
-            ecuation = `${a} + ${b}X = ${c} + ${d}X`;
-            resultadoEcuation = (c - a) / (b - d);
-            document.getElementById("ecuacion").innerHTML = ecuation;
-            break;
-        }
-
-        case 2: {
-        let a = nR(), b = nR(), c = nR(), d = nR();
-        if(b === 1) b++;
-        ecuation = `${a} - ${b}X + ${c} = ${d} - X`;
-        resultadoEcuation = (a + c - d) / (b - 1);
-        document.getElementById("ecuacion").innerHTML = ecuation;
-        break;
-        }
+  switch (numberEcuation) {
+    case 0: {
+      let a = nR(),
+        b = nR(),
+        c = nR();
+      ecuation = `${a}X + ${b} = ${c}`;
+      resultadoEcuation = (c - b) / a;
+      document.getElementById("ecuacion").innerHTML = ecuation;
+      break;
     }
 
-    Posicion_Correcta();
-     
-}
+    case 1: {
+      let a = nR(),
+        b = nR(),
+        c = nR(),
+        d = nR();
+      if (b === d) b++;
+      ecuation = `${a} + ${b}X = ${c} + ${d}X`;
+      resultadoEcuation = (c - a) / (b - d);
+      document.getElementById("ecuacion").innerHTML = ecuation;
+      break;
+    }
+
+    case 2: {
+      let a = nR(),
+        b = nR(),
+        c = nR(),
+        d = nR();
+      if (b === 1) b++;
+      ecuation = `${a} - ${b}X + ${c} = ${d} - X`;
+      resultadoEcuation = (a + c - d) / (b - 1);
+      document.getElementById("ecuacion").innerHTML = ecuation;
+      break;
+    }
+  }
+
+  Posicion_Correcta();
+};
 
 let orden = 0;
-function Posicion_Correcta(){
-    let opctionCorrecta = Math.floor(Math.random() * 3);
-    let opErronea = (Math.random() * 201) - 100;
-    let opErronea2 = (Math.random() * 201) - 100;
+function Posicion_Correcta() {
+  let opctionCorrecta = Math.floor(Math.random() * 3);
+  let opErronea = Math.random() * 201 - 100;
+  let opErronea2 = Math.random() * 201 - 100;
 
-    if(opctionCorrecta == 1){
+  if (opctionCorrecta == 1) {
+    document.getElementById("option-1").innerHTML =
+      resultadoEcuation.toFixed(2);
+    document.getElementById("option-2").innerHTML = opErronea.toFixed(2);
+    document.getElementById("option-3").innerHTML = opErronea2.toFixed(2);
 
-        document.getElementById("option-1").innerHTML = resultadoEcuation.toFixed(2);
-        document.getElementById("option-2").innerHTML = opErronea.toFixed(2);
-        document.getElementById("option-3").innerHTML = opErronea2.toFixed(2);
+    orden = 1;
+  } else if (opctionCorrecta == 2) {
+    document.getElementById("option-1").innerHTML = opErronea.toFixed(2);
+    document.getElementById("option-2").innerHTML =
+      resultadoEcuation.toFixed(2);
+    document.getElementById("option-3").innerHTML = opErronea2.toFixed(2);
 
-         orden = 1;
-    }
-    else if(opctionCorrecta == 2){
+    orden = 2;
+  } else {
+    document.getElementById("option-1").innerHTML = opErronea2.toFixed(2);
+    document.getElementById("option-2").innerHTML = opErronea.toFixed(2);
+    document.getElementById("option-3").innerHTML =
+      resultadoEcuation.toFixed(2);
 
-        document.getElementById("option-1").innerHTML = opErronea.toFixed(2);
-        document.getElementById("option-2").innerHTML = resultadoEcuation.toFixed(2);
-        document.getElementById("option-3").innerHTML = opErronea2.toFixed(2);
-
-         orden = 2;
-    }
-    else{
-
-        document.getElementById("option-1").innerHTML = opErronea2.toFixed(2);
-        document.getElementById("option-2").innerHTML = opErronea.toFixed(2);
-        document.getElementById("option-3").innerHTML = resultadoEcuation.toFixed(2);
-
-        orden = 3;
-    }
+    orden = 3;
+  }
 }
 
-  function Val_Respuesta(opcion){
-
-    if(opcion == orden){
-
-        alert("!CORRECTO¡");
-        GenerarEcuation();
-    }
-    else{
-        alert("INCORRETO")
-    }
-
+function Val_Respuesta(opcion) {
+  if (opcion == orden) {
+    alert("!CORRECTO¡");
+    GenerarEcuation();
+  } else {
+    alert("INCORRETO");
+  }
 }
 
 const nR = () => {
+  let numR = Math.floor(Math.random() * 100);
+  return numR;
+};
 
-   let numR = Math.floor(Math.random() * 100);
-   return numR; 
-}
+const StarTime = () => {
+  let seg = 0;
+  let min = 0;
 
-const StarTime =  () =>{
+  setInterval(() => {
+    seg++;
+    if (seg == 59) {
+      min++;
+      seg = 0;
+    }
+    document.getElementById("timer").innerHTML = `Timer <br> ${min}:${seg}`;
+  }, 1000);
+};
 
-    let seg = 0;
-    let min = 0;
+//EJERCICIO 3
 
-    setInterval(() => {
-        seg++;
-        if(seg == 59){
-            min++;
-            seg = 0;
-        }
-        document.getElementById("timer").innerHTML = `Timer <br> ${min}:${seg}`;
-    }, 1000);
-}
+const figuras = [
+  {
+    nombre: "cuadrado",
+    imagen: "img/cuadrado.png",
+  },
+  {
+    nombre: "hexagono",
+    imagen: "img/hexagono.png",
+  },
+  {
+    nombre: "octagono",
+    imagen: "img/octagono.png",
+  },
+  {
+    nombre: "pentagono",
+    imagen: "img/pentagono.png",
+  },
+  {
+    nombre: "triangulo",
+    imagen: "img/triangulo.png",
+  },
+];
 
+//MOSTRAR FIGURA
+
+const MostrarFigura = () => {
+  let opcionFigura = document.getElementById("figuras").value;
+
+  const cotentFigura = document.getElementById("cont-figura");
+  figuras.forEach((figura) => {
+    const { nombre, imagen } = figura;
+
+    if (nombre == opcionFigura) {
+      cotentFigura.innerHTML = ` <img src="${imagen}" />`;
+    } else if (opcionFigura == "") {
+      cotentFigura.innerHTML = "";
+    }
+  });
+};
+
+const Calcular = () => {
+  let opcionFigura = document.getElementById("figuras").value;
+
+  let valorX = parseInt(document.getElementById("input-valor-X").value);
+  let area;
+  let perimetro;
+
+  switch (opcionFigura) {
+    case "cuadrado":
+      perimetro = valorX * 4;
+      area = valorX * valorX;
+      break;
+
+    case "triangulo":
+      perimetro = valorX * 3;
+      area = ((valorX * valorX ) * 1.732) / 4;
+      break;
+
+    case "pentagono":
+      perimetro = valorX * 5;
+      area = (5 * (valorX * valorX)) / 2.91;
+      break;
+
+    case "hexagono":
+      perimetro = valorX * 6;
+      area = (valorX * valorX) * 2.598;
+      break;
+
+    case "octagono":
+      perimetro = valorX * 8;
+      area = (valorX * valorX) * 4.8284;
+  }
+
+  document.getElementById("text-area").innerHTML = area.toFixed(2);
+  document.getElementById("text-perimetro").innerHTML = perimetro;
+};
